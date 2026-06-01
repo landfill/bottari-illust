@@ -121,6 +121,10 @@ Bottari Illust는 AI 에이전트가 글, 게시물, 블로그, Notion 문서,
 
 ## 예시
 
+### 하나프리팩 하이브리드
+
+![하나프리팩 하이브리드](examples/images/00-hana-freepack-hybrid.png)
+
 ### 두 개의 끊김점
 
 ![두 개의 끊김점](examples/images/01-two-breakpoints.png)
