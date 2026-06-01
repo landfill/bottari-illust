@@ -125,10 +125,10 @@ description: >-
 
 ### 5. 저장과 전달
 
-사용자가 워크스페이스 안에서 작업 중이면 최종 이미지를 다음 위치에 복사합니다.
+사용자가 워크스페이스 안에서 작업 중이면 최종 이미지를 글 단위 보따리 포켓으로 묶어 다음 위치에 복사합니다.
 
 ```text
-assets/<article-slug>-illustrations/
+assets/<article-slug>-pocket/
 ```
 
 순서대로 이름을 붙입니다.
