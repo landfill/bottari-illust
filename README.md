@@ -12,7 +12,7 @@
 
 ## 이 저장소는 무엇인가
 
-Bottari Illust는 AI 에이전트가 글, 게시물, 블로그, Notion 문서,
+Bottari Illust는 AI 에이전트가 글이나 작업 자료,
 방법론 콘텐츠에 어울리는 본문 삽화를 만들도록 안내하는 Codex
 스킬입니다.
 
@@ -40,6 +40,18 @@ Bottari Illust는 AI 에이전트가 글, 게시물, 블로그, Notion 문서,
 비공식 캐릭터이며, 실제 서비스에 사용할 때는 브랜드 로고, 상품명,
 가격, 출발일, 예약 상태처럼 변동되거나 권리가 걸린 정보는 원문 확인 후
 별도로 관리해야 합니다.
+
+---
+
+## 권리와 사용 범위
+
+"보따리" 캐릭터의 이름, 설정, 외형, 시각적 정체성에 대한 권리는
+저작자가 보유합니다. 보따리 캐릭터를 별도 캐릭터 IP처럼 재사용하거나,
+공식 브랜드 자산으로 오해될 수 있는 방식으로 사용하지 마세요.
+
+그 외 이 저장소의 스킬 문서, 프롬프트 구조, 설정 파일, 작업 흐름,
+예시 구성 등 코드베이스 성격의 자료는 자유롭게 사용, 복제, 수정,
+배포할 수 있습니다.
 
 ---
 
@@ -165,11 +177,11 @@ Bottari Illust는 AI 에이전트가 글, 게시물, 블로그, Notion 문서,
 
 ## 캐릭터 기준
 
-캐릭터의 최종 기준은 [bottari-illust/references/bottari-ip.md](bottari-illust/references/bottari-ip.md)입니다.
+캐릭터의 최종 기준은 [bottari-illust/references/bottari-character.md](bottari-illust/references/bottari-character.md)입니다.
 
 기존 `examples/images/`와 `bottari-illust/assets/examples/`의 이미지는
 구도 복제 방지와 선 밀도 참고용으로만 봅니다. 새 보따리의 외형 기준으로
-삼지 마세요. 새 이미지 생성 시에는 반드시 `bottari-ip.md`의 배낭
+삼지 마세요. 새 이미지 생성 시에는 반드시 `bottari-character.md`의 배낭
 캐릭터 정의를 우선합니다.
 
 ---
@@ -259,7 +271,7 @@ $bottari-illust로 이 그림을 편집해 주세요. 왼쪽 위의 "흐름도" 
 
 이 스킬의 흐름은 다음과 같습니다.
 
-1. 글, Markdown, Notion 내용, 스크린샷 또는 사용자가 준 주제를 읽습니다.
+1. 글, 자료, 링크, 스크린샷 또는 사용자가 준 주제를 읽습니다.
 2. 핵심 주장, 인지적 전환, 흐름 구조, 시각화하기 좋은 문단을 추려냅니다.
 3. 먼저 샷 목록을 출력합니다. 각 그림은 하나의 인지 앵커만 선택합니다.
 4. 각 그림에 맞는 구조 유형을 고릅니다. 워크플로, 시스템 일부,
@@ -297,11 +309,11 @@ $bottari-illust로 이 그림을 편집해 주세요. 왼쪽 위의 "흐름도" 
     ├── assets/
     │   └── examples/
     └── references/
-        ├── style-dna.md
-        ├── bottari-ip.md
-        ├── composition-patterns.md
-        ├── prompt-template.md
-        └── qa-checklist.md
+        ├── bottari-character.md
+        ├── bottari-style.md
+        ├── bottari-composition.md
+        ├── bottari-prompt.md
+        └── bottari-qa.md
 ```
 
 Codex에 실제로 설치해야 하는 것은 하위 디렉터리입니다.
@@ -323,7 +335,7 @@ bottari-illust/
   키 비주얼을 복제하는 용도가 아닙니다.
 - 여행 상품을 다룰 때는 원문 링크에서 확인한 사실만 쓰고, 가격,
   출발일, 좌석, 예약 가능 여부 같은 변동 정보는 이미지 안에 직접 넣지 마세요.
-- 예시 그림은 선 밀도, 여백, 색 절제, 복제 금지 구도 확인용입니다. 새 캐릭터 외형은 `bottari-ip.md`를 따르세요.
+- 예시 그림은 선 밀도, 여백, 색 절제, 복제 금지 구도 확인용입니다. 새 캐릭터 외형은 `bottari-character.md`를 따르세요.
 - AI 이미지 모델은 오탈자, 환각 라벨, 스타일 흔들림, 불필요한 제목을 만들 수 있으므로 생성 후 확인이 필요합니다.
 - 한국어 오탈자가 심하면 표기어를 먼저 줄이고 다시 생성하세요.
 

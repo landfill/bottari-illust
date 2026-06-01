@@ -2,7 +2,7 @@
 name: bottari-illust
 description: >-
   여행보따리 캐릭터 스타일의 한국어 본문 삽화를 생성합니다. 사용자가 글,
-  게시물, 블로그, Notion 문서, 워크플로 문서, 방법론, 흐름, 구조,
+  작업 자료, 방법론, 흐름, 구조,
   상태, 은유 또는 관점에 대해 "보따리", "배낭 캐릭터", "손그림",
   "본문 삽화", "글 삽화", "삽화 제안", "샷 목록",
   "제목 제거/이미지 수정" 작업을 요청할 때 사용합니다. 기본적으로 작고
@@ -31,19 +31,19 @@ description: >-
 
 작업에 필요한 것만 읽고, 한 번에 모든 내용을 맥락에 넣지 마세요.
 
-- `references/style-dna.md`: 스타일 DNA, 색상, 문자, 금지 사항.
-- `references/bottari-ip.md`: 보따리 캐릭터의 외형, 성격, 동작 목록, 금지 사항.
-- `references/composition-patterns.md`: 구조 유형, 독창적 은유 생성법, 복제 방지 규칙.
-- `references/prompt-template.md`: 단일 이미지 생성 프롬프트 템플릿.
-- `references/qa-checklist.md`: 생성 후 확인과 반복 수정 규칙.
+- `references/bottari-character.md`: 보따리 캐릭터의 외형, 성격, 동작 목록, 금지 사항.
+- `references/bottari-style.md`: 스타일 DNA, 색상, 문자, 금지 사항.
+- `references/bottari-composition.md`: 구조 유형, 독창적 은유 생성법, 복제 방지 규칙.
+- `references/bottari-prompt.md`: 단일 이미지 생성 프롬프트 템플릿.
+- `references/bottari-qa.md`: 생성 후 확인과 반복 수정 규칙.
 - `assets/examples/`: 레거시 예시 구도 확인용으로만 사용합니다.
-  캐릭터 외형 참조는 항상 `references/bottari-ip.md`를 우선합니다.
+  캐릭터 외형 참조는 항상 `references/bottari-character.md`를 우선합니다.
 
 ## 작업 흐름
 
 ### 1. 본문 소화
 
-사용자가 제공한 본문, 링크, Notion 페이지, Markdown 파일, 스크린샷 내용을 먼저 읽습니다. 다음을 추려냅니다.
+사용자가 제공한 본문, 자료, 링크, 스크린샷 내용을 먼저 읽습니다. 다음을 추려냅니다.
 
 - 핵심 관점이 무엇인지
 - 어떤 문단이 인지적 전환을 담당하는지
@@ -110,7 +110,7 @@ description: >-
 
 ### 4. 확인과 반복 수정
 
-생성 후 `references/qa-checklist.md`를 확인합니다. 다음 문제가 있으면 우선 재생성하거나 부분 편집합니다.
+생성 후 `references/bottari-qa.md`를 확인합니다. 다음 문제가 있으면 우선 재생성하거나 부분 편집합니다.
 
 - 보따리가 배낭이 아니라 다른 캐릭터처럼 보임
 - 보따리가 장식에 그침
