@@ -1,6 +1,6 @@
 interface:
   display_name: "여행보따리 캐릭터 삽화"
   short_description: "글을 위한 차분한 보따리 배낭 캐릭터 본문 삽화 자산을 생성합니다"
-  default_prompt: "$ian-bottari-illustrations로 이 글을 위한 보따리 배낭 본문 삽화 몇 장을 설계하고 생성해 주세요."
+  default_prompt: "$bottari-illust로 이 글을 위한 보따리 배낭 본문 삽화 몇 장을 설계하고 생성해 주세요."
 policy:
   allow_implicit_invocation: true
