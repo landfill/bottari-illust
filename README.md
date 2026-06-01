@@ -90,7 +90,7 @@ Bottari Illust는 AI 에이전트가 글, 게시물, 블로그, Notion 문서,
 - 16:9 가로형 본문 삽화
 - 글 한 편에 대한 4-8장의 샷 목록
 - 각 그림의 주제, 핵심 의미, 구조 유형, 보따리 동작, 한국어 표기 제안
-- 최종 PNG 이미지, 워크스페이스의 `assets/<article-slug>-illustrations/`에 저장
+- 최종 PNG 이미지, 워크스페이스의 `assets/<article-slug>-pocket/`에 저장
 
 기본적으로 만들지 않는 것:
 
@@ -271,7 +271,7 @@ $bottari-illust로 이 그림을 편집해 주세요. 왼쪽 위의 "흐름도" 
 8. QA 체크리스트로 확인합니다. 흰 배경, 여백, 배낭 캐릭터 단서,
    보따리 동작, 한국어 표기, PPT 느낌 배제, 기존 예시 복제 금지를
    점검합니다.
-9. 최종 PNG를 저장하고, 용도와 경로를 보고합니다.
+9. 최종 PNG를 글 단위 보따리 포켓 경로에 저장하고, 용도와 경로를 보고합니다.
 
 ---
 
@@ -280,6 +280,10 @@ $bottari-illust로 이 그림을 편집해 주세요. 왼쪽 위의 "흐름도" 
 ```text
 .
 ├── README.md
+├── assets/
+│   └── <article-slug>-pocket/
+│       ├── 01-topic-name.png
+│       └── 02-topic-name.png
 ├── examples/
 │   ├── images/
 │   │   ├── 01-two-breakpoints.png
