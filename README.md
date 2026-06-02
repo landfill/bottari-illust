@@ -10,7 +10,7 @@
 
 ---
 
-## 이 저장소는 무엇인가
+## 스킬 소개
 
 Bottari Illust는 AI 에이전트가 글이나 작업 자료,
 방법론 콘텐츠에 어울리는 본문 삽화를 만들도록 안내하는 Codex
@@ -74,35 +74,26 @@ Bottari Illust는 AI 에이전트가 글이나 작업 자료,
 어떤 글이든 "여행자가 길 위에서 필요한 조각을 하나씩 챙긴다"는 감각으로
 핵심 판단을 작게 운반하고, 묶고, 내려놓는 것이 이 스킬의 기본 태도입니다.
 
-## 누구에게 맞는가
+## 활용 범위와 산출물
 
-특히 잘 맞는 경우:
+적합한 활용:
 
-- 한국어 글을 쓰며 본문 삽화나 글 중간 이미지가 필요한 사람
-- 여행 상품, 기획전, 패키지 설명을 부드러운 본문 삽화로 바꾸고 싶은 사람
-- 지식형 콘텐츠, 방법론 콘텐츠, AI 워크플로 콘텐츠를 만드는 사람
-- 추상적인 판단을 구체적인 은유로 시각화하고 싶은 사람
-- PPT 정보 그래픽보다 더 가볍고, 더 조용하고, 더 개인적인 식별성이 있는 삽화 스타일을 원하는 사람
-- Codex로 콘텐츠를 만들면서 안정적으로 재사용할 시각 언어가 필요한 사람
+- 한국어 본문, 기획전, 여행 상품 설명의 중간 삽화
+- 지식형 콘텐츠, 방법론 콘텐츠, AI 워크플로 콘텐츠의 개념 시각화
+- PPT 정보 그래픽보다 가볍고 조용한 재사용형 시각 언어
 
-맞지 않는 경우:
+제외 범위:
 
-- 상업용 일러스트, 브랜드 키 비주얼, 정교한 플랫 일러스트를 원하는 사람
-- 전통적인 PPT 정보 그래픽, 복잡한 아키텍처 다이어그램, 흐름도를 원하는 사람
-- 어린이풍 만화, 과장된 캐릭터 IP, 밈 스타일을 원하는 사람
-- 긴 본문, 긴 설명, 전체 강의 페이지를 그림 한 장에 밀어 넣고 싶은 사람
-- 엄격하게 편집 가능한 벡터 원본 파일이 필요한 사람
-
----
-
-## 무엇을 만들어 주는가
+- 상업용 키 비주얼, 브랜드 캠페인 일러스트, 정교한 플랫 일러스트
+- 복잡한 아키텍처 다이어그램, 전통적인 흐름도, 편집 가능한 벡터 원본
+- 긴 본문이나 전체 강의 페이지를 한 장에 압축하는 정보 그래픽
 
 기본 산출물:
 
 - 16:9 가로형 본문 삽화
 - 글 한 편에 대한 4-8장의 샷 목록
 - 각 그림의 주제, 핵심 의미, 구조 유형, 보따리 동작, 한국어 표기 제안
-- 최종 PNG 이미지, 워크스페이스의 `assets/<article-slug>-pocket/`에 저장
+- 최종 PNG 이미지
 
 기본적으로 만들지 않는 것:
 
@@ -169,20 +160,7 @@ Bottari Illust는 AI 에이전트가 글이나 작업 자료,
 
 ![신뢰의 다리](examples/images/08-trust-bridge.png)
 
-이 이미지는 새 보따리 배낭 캐릭터 기준으로 재생성한 예시입니다. 사용할
-때는 현재 글에서 은유를 새로 발명해야 하며, 기존 사례의 물건과 구도를
-그대로 베끼면 안 됩니다.
-
----
-
-## 캐릭터 기준
-
-캐릭터의 최종 기준은 [bottari-illust/references/bottari-character.md](bottari-illust/references/bottari-character.md)입니다.
-
-기존 `examples/images/`와 `bottari-illust/assets/examples/`의 이미지는
-구도 복제 방지와 선 밀도 참고용으로만 봅니다. 새 보따리의 외형 기준으로
-삼지 마세요. 새 이미지 생성 시에는 반드시 `bottari-character.md`의 배낭
-캐릭터 정의를 우선합니다.
+이 이미지는 새 보따리 배낭 캐릭터 기준으로 재생성한 예시입니다.
 
 ---
 
@@ -197,9 +175,19 @@ cd bottari-illust
 
 스킬을 Codex 스킬 디렉터리로 복사합니다.
 
+macOS / Linux:
+
 ```bash
 mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
 cp -R ./bottari-illust "${CODEX_HOME:-$HOME/.codex}/skills/"
+```
+
+Windows PowerShell:
+
+```powershell
+$codexHome = if ($env:CODEX_HOME) { $env:CODEX_HOME } else { Join-Path $env:USERPROFILE ".codex" }
+New-Item -ItemType Directory -Force -Path (Join-Path $codexHome "skills") | Out-Null
+Copy-Item -Recurse -Force ".\bottari-illust" (Join-Path $codexHome "skills")
 ```
 
 설치 후 Codex에서 이렇게 사용합니다.
@@ -263,8 +251,6 @@ $bottari-illust로 "신뢰는 외쳐서 생기는 것이 아니라,
 $bottari-illust로 이 그림을 편집해 주세요. 왼쪽 위의 "흐름도" 제목을 제거하고, 다른 내용은 그대로 유지해 주세요.
 ```
 
-더 많은 예시는 [examples/prompts.md](examples/prompts.md)를 참고하세요.
-
 ---
 
 ## 작업 흐름
@@ -292,37 +278,27 @@ $bottari-illust로 이 그림을 편집해 주세요. 왼쪽 위의 "흐름도" 
 ```text
 .
 ├── README.md
-├── assets/
+├── assets/                         # 스킬 실행 워크스페이스의 최종 PNG 저장 위치
 │   └── <article-slug>-pocket/
-│       ├── 01-topic-name.png
-│       └── 02-topic-name.png
-├── examples/
-│   ├── images/
-│   │   ├── 01-two-breakpoints.png
-│   │   ├── 02-sort-by-purpose.png
-│   │   └── ...
-│   └── prompts.md
-└── bottari-illust/
-    ├── SKILL.md
+│       ├── 01-core-metaphor.png
+│       └── 02-handoff-path.png
+├── examples/                       # GitHub에서 볼 수 있는 예시 자료
+│   ├── images/                     # 새 보따리 기준 예시, 구도 복제 금지
+│   │   └── 00-hana-freepack-hybrid.png
+│   └── prompts.md        # 더 많은 예시 프롬프트
+└── bottari-illust/                 # Codex에 설치하는 스킬 디렉터리
+    ├── SKILL.md                    # 스킬 진입 문서와 작업 흐름
     ├── agents/
     │   └── openai.yaml
     ├── assets/
-    │   └── examples/
-    └── references/
-        ├── bottari-character.md
-        ├── bottari-style.md
-        ├── bottari-composition.md
-        ├── bottari-prompt.md
-        └── bottari-qa.md
+    │   └── examples/               # 레거시 예시, 선 밀도와 구도 확인용
+    └── references/                 # 생성 전후에 확인하는 기준 문서
+        ├── bottari-character.md    # 새 보따리 캐릭터의 최종 외형 기준
+        ├── bottari-style.md        # 색, 선, 여백, 금지 스타일
+        ├── bottari-composition.md  # 구조 유형과 복제 방지 규칙
+        ├── bottari-prompt.md       # 단일 이미지 프롬프트 템플릿
+        └── bottari-qa.md           # 생성 후 QA 체크리스트
 ```
-
-Codex에 실제로 설치해야 하는 것은 하위 디렉터리입니다.
-
-```text
-bottari-illust/
-```
-
-루트의 README와 examples는 GitHub 공유용 문서입니다.
 
 ---
 
